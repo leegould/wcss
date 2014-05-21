@@ -1,0 +1,53 @@
+<head>
+  <title>wcss</title>
+</head>
+
+<body>
+    <h1>World Cup Sweep Stake</h1>
+    {{> loginButtons}}
+
+    {{#if currentUser}}
+        {{> myteam}}
+
+        {{> myleagues}}
+
+        {{> addleague}}
+
+        {{> allteams}}
+    {{/if}}
+</body>
+
+<template name="addleague">
+    <input type="text" id="league" />
+    <input type="submit" id="addLeague" value="Add League" />
+</template>
+
+<template name="myteam">
+    {{#with team}}
+    <div>
+        <p>Team : <span>{{name}}</span></p>
+    </div>
+    {{/with}}
+</template>
+
+<template name="myleagues">
+    <h3>My Leagues</h3>
+    {{#each league}}
+    <div>
+        {{name}}
+    </div>
+    {{/each}}
+</template>
+
+<template name="allteams">
+    {{#each team}}
+        <p> {{name}} </p>
+    {{/each}}
+</template>
+
+<template name="hello">
+  <h1>Hello World!</h1>
+  {{greeting}}
+  <input type="button" value="Click" />
+</template>
+
